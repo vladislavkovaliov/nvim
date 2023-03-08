@@ -35,6 +35,8 @@ return require('packer').startup(function(use)
   use('nvim-tree/nvim-tree.lua')
   use('kyazdani42/nvim-web-devicons')
 
+  use('nvim-lualine/lualine.nvim')
+
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
