@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   -- essential plugins
   use('tpope/vim-surround')
   use('vim-scripts/ReplaceWithRegister')
+  use('numToStr/Comment.nvim')
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
