@@ -21,6 +21,8 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
+  use('nvim-lua/plenary.nvim')
+
   use('bluz71/vim-nightfly-guicolors') -- preffered colors scheme
   use('christoomey/vim-tmux-navigator')
   use('szw/vim-maximizer') -- to max and restore size of current window
@@ -29,6 +31,9 @@ return require('packer').startup(function(use)
   use('tpope/vim-surround')
   use('vim-scripts/ReplaceWithRegister')
   use('numToStr/Comment.nvim')
+
+  use('nvim-tree/nvim-tree.lua')
+  use('kyazdani42/nvim-web-devicons')
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
