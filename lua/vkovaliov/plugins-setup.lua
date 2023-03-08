@@ -37,6 +37,16 @@ return require('packer').startup(function(use)
 
   use('nvim-lualine/lualine.nvim')
 
+  -- fuzzy finding
+  use({
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make"
+  })
+  use({
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x"
+  })
+
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
