@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
 
   -- autocompletion
   use "hrsh7th/nvim-cmp" -- completion plugin
-  use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer" -- source for text in buffer
   use "hrsh7th/cmp-path" -- source for file system paths
   -- snippets
@@ -58,6 +57,21 @@ return require('packer').startup(function(use)
   use {
     "rafamadriz/friendly-snippets"
   }   
+
+  -- managing and installing lsp servers
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  
+  -- configuring lsp server
+  use "neovim/nvim-lspconfig"
+  use 'hrsh7th/cmp-nvim-lsp'
+  use {
+    "glepnir/lspsaga.nvim",
+    branch = "main"
+  }
+  use "jose-elias-alvarez/typescript.nvim"
+  use "onsails/lspkind.nvim"
+
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
