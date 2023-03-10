@@ -20,32 +20,44 @@ vim.cmd([[
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use('wbthomason/packer.nvim')
-  use('nvim-lua/plenary.nvim')
+  use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim'
 
-  use('bluz71/vim-nightfly-guicolors') -- preffered colors scheme
-  use('christoomey/vim-tmux-navigator')
-  use('szw/vim-maximizer') -- to max and restore size of current window
+  use 'bluz71/vim-nightfly-guicolors' -- preffered colors scheme
+  use 'christoomey/vim-tmux-navigator'
+  use 'szw/vim-maximizer' -- to max and restore size of current window
 
   -- essential plugins
-  use('tpope/vim-surround')
-  use('vim-scripts/ReplaceWithRegister')
-  use('numToStr/Comment.nvim')
+  use 'tpope/vim-surround'
+  use 'vim-scripts/ReplaceWithRegister'
+  use 'numToStr/Comment.nvim'
 
-  use('nvim-tree/nvim-tree.lua')
-  use('kyazdani42/nvim-web-devicons')
+  use 'nvim-tree/nvim-tree.lua'
+  use 'kyazdani42/nvim-web-devicons'
 
-  use('nvim-lualine/lualine.nvim')
+  use 'nvim-lualine/lualine.nvim'
 
   -- fuzzy finding
-  use({
+  use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make"
-  })
-  use({
+  } 
+  use {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x"
-  })
+  } 
+
+  -- autocompletion
+  use "hrsh7th/nvim-cmp" -- completion plugin
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-buffer" -- source for text in buffer
+  use "hrsh7th/cmp-path" -- source for file system paths
+  -- snippets
+  use 'L3MON4D3/LuaSnip'
+  use "saadparwaiz1/cmp_luasnip"  -- for autocompletion
+  use {
+    "rafamadriz/friendly-snippets"
+  }   
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
