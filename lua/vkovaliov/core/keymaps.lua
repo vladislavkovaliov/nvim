@@ -20,6 +20,8 @@ keymap.set("n", "<leader>to", ":tabnew<CR>") -- to open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- to close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
+keymap.set("n", "<F2>", ":w<CR>")
+keymap.set("n", "<F1>", ":q<CR>")
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
