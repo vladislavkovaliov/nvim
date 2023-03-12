@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make"
-  } 
+  }
   use {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x"
@@ -51,17 +51,18 @@ return require('packer').startup(function(use)
   use "hrsh7th/nvim-cmp" -- completion plugin
   use "hrsh7th/cmp-buffer" -- source for text in buffer
   use "hrsh7th/cmp-path" -- source for file system paths
+
   -- snippets
   use 'L3MON4D3/LuaSnip'
   use "saadparwaiz1/cmp_luasnip"  -- for autocompletion
   use {
     "rafamadriz/friendly-snippets"
-  }   
+  }
 
   -- managing and installing lsp servers
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  
+
   -- configuring lsp server
   use "neovim/nvim-lspconfig"
   use 'hrsh7th/cmp-nvim-lsp'
@@ -69,10 +70,12 @@ return require('packer').startup(function(use)
     "glepnir/lspsaga.nvim",
     branch = "main"
   }
+
   use "jose-elias-alvarez/typescript.nvim"
   use "onsails/lspkind.nvim"
   use "nvim-treesitter/nvim-treesitter"
 
+  use "akinsho/flutter-tools.nvim"
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'

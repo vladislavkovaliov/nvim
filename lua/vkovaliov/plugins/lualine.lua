@@ -20,7 +20,7 @@ lualine_nightfly.command = {
     gui = "bold",
     bg = new_colors.yellow,
     fg = new_colors.black,
-  } 
+  },
 }
 
 lualine.setup({
