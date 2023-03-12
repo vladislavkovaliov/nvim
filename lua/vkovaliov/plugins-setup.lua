@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
   }
   use "jose-elias-alvarez/typescript.nvim"
   use "onsails/lspkind.nvim"
+  use "nvim-treesitter/nvim-treesitter"
 
 
   -- My plugins here
