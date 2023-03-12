@@ -1,8 +1,8 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -19,23 +19,23 @@ vim.cmd([[
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'nvim-lua/plenary.nvim'
+return require("packer").startup(function(use)
+  use "wbthomason/packer.nvim"
+  use "nvim-lua/plenary.nvim"
 
-  use 'bluz71/vim-nightfly-guicolors' -- preffered colors scheme
-  use 'christoomey/vim-tmux-navigator'
-  use 'szw/vim-maximizer' -- to max and restore size of current window
+  use "bluz71/vim-nightfly-guicolors" -- preffered colors scheme
+  use "christoomey/vim-tmux-navigator"
+  use "szw/vim-maximizer" -- to max and restore size of current window
 
   -- essential plugins
-  use 'tpope/vim-surround'
-  use 'vim-scripts/ReplaceWithRegister'
-  use 'numToStr/Comment.nvim'
+  use "tpope/vim-surround"
+  use "vim-scripts/ReplaceWithRegister"
+  use "numToStr/Comment.nvim"
 
-  use 'nvim-tree/nvim-tree.lua'
-  use 'kyazdani42/nvim-web-devicons'
+  use "nvim-tree/nvim-tree.lua"
+  use "kyazdani42/nvim-web-devicons"
 
-  use 'nvim-lualine/lualine.nvim'
+  use "nvim-lualine/lualine.nvim"
 
   -- fuzzy finding
   use {
@@ -53,19 +53,19 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-path" -- source for file system paths
 
   -- snippets
-  use 'L3MON4D3/LuaSnip'
+  use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"  -- for autocompletion
   use {
     "rafamadriz/friendly-snippets"
   }
 
   -- managing and installing lsp servers
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
 
   -- configuring lsp server
   use "neovim/nvim-lspconfig"
-  use 'hrsh7th/cmp-nvim-lsp'
+  use "hrsh7th/cmp-nvim-lsp"
   use {
     "glepnir/lspsaga.nvim",
     branch = "main"
@@ -78,12 +78,12 @@ return require('packer').startup(function(use)
   use "akinsho/flutter-tools.nvim"
 
   -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+  -- use "foo1/bar1.nvim"
+  -- use "foo2/bar2.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
-    require('packer').sync()
+    require("packer").sync()
   end
 end)
