@@ -11,7 +11,9 @@ nvimtree.setup({
   update_focused_file = {
     enable = true
   },
+
   renderer = {
+    highlight_git = false,
     icons = {
       glyphs = {
         folder = {
@@ -20,5 +22,18 @@ nvimtree.setup({
         },
       },
     },
+  },
+
+  actions = {
+        open_file = {
+            resize_window = true
+        },
+    },
+
+  view = {
+    width = {
+      min = "30%",
+    },
+    side = "right",
   },
 })
