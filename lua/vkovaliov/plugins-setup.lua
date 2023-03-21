@@ -63,6 +63,10 @@ return require("packer").startup(function(use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
 
+  -- linging and formatting
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "jayp0521/mason-null-ls.nvim"
+
   -- configuring lsp server
   use "neovim/nvim-lspconfig"
   use "hrsh7th/cmp-nvim-lsp"
