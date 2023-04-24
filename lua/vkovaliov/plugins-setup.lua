@@ -77,7 +77,6 @@ return require("packer").startup(function(use)
 
 	use("jose-elias-alvarez/typescript.nvim")
 	use("onsails/lspkind.nvim")
-	use("nvim-treesitter/nvim-treesitter")
 
 	use("akinsho/flutter-tools.nvim")
 
@@ -92,6 +91,9 @@ return require("packer").startup(function(use)
 	-- auto closing
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
+
+	-- git
+	use("lewis6991/gitsigns.nvim")
 
 	-- My plugins here
 	-- use "foo1/bar1.nvim"
