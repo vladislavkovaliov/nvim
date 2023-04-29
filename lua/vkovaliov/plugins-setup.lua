@@ -94,6 +94,7 @@ return require("packer").startup(function(use)
 
 	-- git
 	use("lewis6991/gitsigns.nvim")
+	use("wakatime/vim-wakatime")
 
 	-- My plugins here
 	-- use "foo1/bar1.nvim"
