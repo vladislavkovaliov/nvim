@@ -15,7 +15,6 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- to split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- to split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- to make spliting windows are equal
 keymap.set("n", "<leader>sx", ":close<CR>") -- to close current split window
-
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- to open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- to close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
