@@ -17,6 +17,7 @@ local split = require("vkovaliov.keymaps.split")
 local tabs = require("vkovaliov.keymaps.tabs")
 local telescope_keymap = require("vkovaliov.keymaps.telescope")
 local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
+local bufferline = require("vkovaliov.keymaps.bufferline")
 
 command_center.add({
 	{
@@ -214,6 +215,38 @@ command_center.add({
 		keys = {
 			vim_maximizer.miximizer_toggle.mode.command_center,
 			vim_maximizer.miximizer_toggle.lhs,
+			noremap,
+		},
+	},
+})
+
+-- DEFINE bufferline
+command_center.add({
+	{
+		desc = bufferline.bufferline_next_tab.description,
+		cmd = bufferline.bufferline_next_tab.rhs,
+		keys = {
+			bufferline.bufferline_next_tab.mode.command_center,
+			bufferline.bufferline_next_tab.lhs,
+			noremap,
+		},
+	},
+	{
+		desc = bufferline.bufferline_prev_tab.description,
+		cmd = bufferline.bufferline_prev_tab.rhs,
+		keys = {
+			bufferline.bufferline_prev_tab.mode.command_center,
+			bufferline.bufferline_prev_tab.lhs,
+			noremap,
+		},
+	},
+
+	{
+		desc = bufferline.buffeline_close_tab.description,
+		cmd = bufferline.buffeline_close_tab.rhs,
+		keys = {
+			bufferline.buffeline_close_tab.mode.command_center,
+			bufferline.buffeline_close_tab.lhs,
 			noremap,
 		},
 	},

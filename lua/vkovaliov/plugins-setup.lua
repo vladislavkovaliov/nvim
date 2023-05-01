@@ -100,6 +100,7 @@ return require("packer").startup(function(use)
 		"FeiyouG/command_center.nvim",
 		requires = { "nvim-telescope/telescope.nvim" },
 	})
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- My plugins here
 	-- use "foo1/bar1.nvim"
