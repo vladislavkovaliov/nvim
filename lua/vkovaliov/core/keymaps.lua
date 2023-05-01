@@ -6,6 +6,7 @@ local split = require("vkovaliov.keymaps.split")
 local tabs = require("vkovaliov.keymaps.tabs")
 local telescope = require("vkovaliov.keymaps.telescope")
 local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
+local bufferline = require("vkovaliov.keymaps.bufferline")
 
 -- general keymap
 -- keymap.set("i", "jk", "<ESC>")
@@ -39,7 +40,6 @@ keymap.set(
 keymap.set("n", "<F5>", ":NvimTreeToggle<CR>")
 
 -- telescope
---
 keymap.set(telescope.find_files.mode.keymap, telescope.find_files.lhs, telescope.find_files.rhs)
 keymap.set(telescope.live_grep.mode.keymap, telescope.live_grep.lhs, telescope.live_grep.rhs)
 keymap.set(telescope.grep_string.mode.keymap, telescope.grep_string.lhs, telescope.grep_string.rhs)
@@ -51,3 +51,20 @@ keymap.set(telescope.diagnostics.mode.keymap, telescope.diagnostics.lhs, telesco
 keymap.set(gitsigns.preview_hunk.mode.keymap, gitsigns.preview_hunk.lhs, gitsigns.preview_hunk.rhs)
 keymap.set(gitsigns.next_hunk.mode.keymap, gitsigns.next_hunk.lhs, gitsigns.next_hunk.rhs)
 keymap.set(gitsigns.prev_hunk.mode.keymap, gitsigns.prev_hunk.lhs, gitsigns.prev_hunk.rhs)
+
+-- bufferline
+keymap.set(
+	bufferline.bufferline_next_tab.mode.keymap,
+	bufferline.bufferline_next_tab.lhs,
+	bufferline.bufferline_next_tab.rhs
+)
+keymap.set(
+	bufferline.bufferline_prev_tab.mode.keymap,
+	bufferline.bufferline_prev_tab.lhs,
+	bufferline.bufferline_prev_tab.rhs
+)
+keymap.set(
+	bufferline.buffeline_close_tab.mode.keymap,
+	bufferline.buffeline_close_tab.lhs,
+	bufferline.buffeline_close_tab.lhs
+)
