@@ -14,6 +14,7 @@ local noremap = { noremap = true }
 -- importing keymaps preset
 local gitsigns = require("vkovaliov.keymaps.gitsigns")
 local split = require("vkovaliov.keymaps.split")
+local tabs = require("vkovaliov.keymaps.tabs")
 
 command_center.add({
 	{
@@ -90,6 +91,46 @@ command_center.add({
 		key = {
 			split.close.mode.command_center,
 			split.close.lhs,
+			noremap,
+		},
+	},
+})
+
+-- DEFINE tabs
+command_center.add({
+	{
+		desc = tabs.tabnew.description,
+		cmd = tabs.tabnew.rhs,
+		key = {
+			tabs.tabnew.mode.command_center,
+			tabs.tabnew.lhs,
+			noremap,
+		},
+	},
+	{
+		desc = tabs.close_tab.description,
+		cmd = tabs.close_tab.rhs,
+		key = {
+			tabs.close_tab.mode.command_center,
+			tabs.close_tab.lhs,
+			noremap,
+		},
+	},
+	{
+		desc = tabs.next_tab.description,
+		cmd = tabs.next_tab.rhs,
+		key = {
+			tabs.next_tab.mode.command_center,
+			tabs.next_tab.lhs,
+			noremap,
+		},
+	},
+	{
+		desc = tabs.prev_tab.description,
+		cmd = tabs.prev_tab.rhs,
+		key = {
+			tabs.prev_tab.mode.command_center,
+			tabs.prev_tab.lhs,
 			noremap,
 		},
 	},
