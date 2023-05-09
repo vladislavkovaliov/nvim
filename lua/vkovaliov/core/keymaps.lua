@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 local gitsigns = require("vkovaliov.keymaps.gitsigns")
 local split = require("vkovaliov.keymaps.split")
+local tabs = require("vkovaliov.keymaps.tabs")
 
 -- general keymap
 -- keymap.set("i", "jk", "<ESC>")
@@ -17,10 +18,10 @@ keymap.set(split.verital.mode.keymap, split.verital.lhs, split.verital.rhs) -- t
 keymap.set(split.horizont.mode.keymap, split.horizont.lhs, split.horizont.rhs) -- to split window horizontally
 keymap.set(split.equal.mode.keymap, split.equal.lhs, split.equal.rhs) -- to make spliting windows are equal
 keymap.set(split.close.mode.keymap, split.close.lhs, split.close.rhs) -- to close current split window
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- to open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- to close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
+keymap.set(tabs.tabnew.mode.keymap, tabs.tabnew.lhs, tabs.tabnew.rhs) -- to open new tab
+keymap.set(tabs.close_tab.mode.keymap, tabs.close_tab.lhs, tabs.close_tab.rhs) -- to close current tab
+keymap.set(tabs.next_tab.mode.keymap, tabs.next_tab.lhs, tabs.next_tab.rhs) -- go to next tab
+keymap.set(tabs.prev_tab.mode.keymap, tabs.prev_tab.lhs, tabs.prev_tab.rhs) -- go to previous tab
 keymap.set("i", "<F2>", "<ESC>:w<CR>") -- exit to visual mode and save file
 keymap.set("n", "<F2>", ":w<CR>")
 keymap.set("n", "<F1>", ":q<CR>")
