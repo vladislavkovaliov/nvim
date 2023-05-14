@@ -4,6 +4,7 @@ local keymap = vim.keymap -- for conciseness
 local gitsigns = require("vkovaliov.keymaps.gitsigns")
 local split = require("vkovaliov.keymaps.split")
 local tabs = require("vkovaliov.keymaps.tabs")
+local telescope = require("vkovaliov.keymaps.telescope")
 
 -- general keymap
 -- keymap.set("i", "jk", "<ESC>")
@@ -33,12 +34,13 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 keymap.set("n", "<F5>", ":NvimTreeToggle<CR>")
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>")
--- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
-keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>")
+--
+keymap.set(telescope.find_files.mode.keymap, telescope.find_files.lhs, telescope.find_files.rhs)
+keymap.set(telescope.live_grep.mode.keymap, telescope.live_grep.lhs, telescope.live_grep.rhs)
+keymap.set(telescope.grep_string.mode.keymap, telescope.grep_string.lhs, telescope.grep_string.rhs)
+keymap.set(telescope.buffers.mode.keymap, telescope.buffers.lhs, telescope.buffers.rhs)
+keymap.set(telescope.help_tags.mode.keymap, telescope.help_tags.lhs, telescope.help_tags.rhs)
+keymap.set(telescope.diagnostics.mode.keymap, telescope.diagnostics.lhs, telescope.diagnostics.rhs)
 
 -- gitsigns
 keymap.set(gitsigns.preview_hunk.mode.keymap, gitsigns.preview_hunk.lhs, gitsigns.preview_hunk.rhs)
