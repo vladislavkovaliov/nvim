@@ -15,14 +15,15 @@ local noremap = { noremap = true }
 local gitsigns = require("vkovaliov.keymaps.gitsigns")
 local split = require("vkovaliov.keymaps.split")
 local tabs = require("vkovaliov.keymaps.tabs")
+local telescope_keymap = require("vkovaliov.keymaps.telescope")
 
 command_center.add({
 	{
 		desc = "Open command_center",
 		cmd = "<CMD>Telescope command_center<CR>",
 		keys = {
-			{ "n", "<Leader>fc", noremap },
-			{ "v", "<Leader>fc", noremap },
+			{ "n", "<Leader>fg", noremap },
+			{ "v", "<Leader>fg", noremap },
 
 			-- If ever hesitate when using telescope start with <leader>f,
 			-- also open command center
@@ -61,38 +62,106 @@ command_center.add({
 	{
 		desc = split.verital.description,
 		cmd = split.verital.rhs,
-		key = {
+		keys = {
 			split.verital.mode.command_center,
 			split.verital.lhs,
 			noremap,
 		},
+		category = "split",
 	},
 	{
 		desc = split.horizont.description,
 		cmd = split.horizont.rhs,
-		key = {
+		keys = {
 			split.horizont.mode.command_center,
 			split.horizont.lhs,
 			noremap,
 		},
+		category = "split",
 	},
 	{
 		desc = split.equal.description,
 		cmd = split.equal.rhs,
-		key = {
+		keys = {
 			split.equal.mode.command_center,
 			split.equal.lhs,
 			noremap,
 		},
+		category = "split",
 	},
 	{
 		desc = split.close.description,
 		cmd = split.close.rhs,
-		key = {
+		keys = {
 			split.close.mode.command_center,
 			split.close.lhs,
 			noremap,
 		},
+		category = "split",
+	},
+})
+
+-- DEFINE telescope keymap
+command_center.add({
+	{
+		desc = telescope_keymap.find_files.description,
+		cmd = telescope_keymap.find_files.rhs,
+		keys = {
+			telescope_keymap.find_files.mode.command_center,
+			telescope_keymap.find_files.lhs,
+			noremap,
+		},
+		category = "telescope",
+	},
+	{
+		desc = telescope_keymap.live_grep.description,
+		cmd = telescope_keymap.live_grep.rhs,
+		keys = {
+			telescope_keymap.live_grep.mode.command_center,
+			telescope_keymap.live_grep.lhs,
+			noremap,
+		},
+		category = "telescope",
+	},
+	{
+		desc = telescope_keymap.grep_string.description,
+		cmd = telescope_keymap.grep_string.rhs,
+		keys = {
+			telescope_keymap.grep_string.mode.command_center,
+			telescope_keymap.grep_string.lhs,
+			noremap,
+		},
+		category = "telescope",
+	},
+	{
+		desc = telescope_keymap.buffers.description,
+		cmd = telescope_keymap.buffers.rhs,
+		keys = {
+			telescope_keymap.buffers.mode.command_center,
+			telescope_keymap.buffers.lhs,
+			noremap,
+		},
+		category = "telescope",
+	},
+	{
+		desc = telescope_keymap.help_tags.description,
+		cmd = telescope_keymap.help_tags.rhs,
+		keys = {
+			telescope_keymap.help_tags.mode.command_center,
+			telescope_keymap.help_tags.lhs,
+			noremap,
+		},
+		category = "telescope",
+	},
+	{
+		desc = telescope_keymap.diagnostics.description,
+		cmd = telescope_keymap.diagnostics.rhs,
+		keys = {
+			telescope_keymap.diagnostics.mode.command_center,
+			telescope_keymap.diagnostics.lhs,
+			noremap,
+		},
+		category = "telescope",
 	},
 })
 
