@@ -16,6 +16,7 @@ local gitsigns = require("vkovaliov.keymaps.gitsigns")
 local split = require("vkovaliov.keymaps.split")
 local tabs = require("vkovaliov.keymaps.tabs")
 local telescope_keymap = require("vkovaliov.keymaps.telescope")
+local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
 
 command_center.add({
 	{
@@ -200,6 +201,19 @@ command_center.add({
 		key = {
 			tabs.prev_tab.mode.command_center,
 			tabs.prev_tab.lhs,
+			noremap,
+		},
+	},
+})
+
+-- DEFINE vim maximizer
+command_center.add({
+	{
+		desc = vim_maximizer.miximizer_toggle.description,
+		cmd = vim_maximizer.miximizer_toggle.rhs,
+		keys = {
+			vim_maximizer.miximizer_toggle.mode.command_center,
+			vim_maximizer.miximizer_toggle.lhs,
 			noremap,
 		},
 	},

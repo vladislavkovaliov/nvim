@@ -5,6 +5,7 @@ local gitsigns = require("vkovaliov.keymaps.gitsigns")
 local split = require("vkovaliov.keymaps.split")
 local tabs = require("vkovaliov.keymaps.tabs")
 local telescope = require("vkovaliov.keymaps.telescope")
+local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
 
 -- general keymap
 -- keymap.set("i", "jk", "<ESC>")
@@ -28,7 +29,11 @@ keymap.set("n", "<F2>", ":w<CR>")
 keymap.set("n", "<F1>", ":q<CR>")
 
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+keymap.set(
+	vim_maximizer.miximizer_toggle.mode.keymap,
+	vim_maximizer.miximizer_toggle.lhs,
+	vim_maximizer.miximizer_toggle.rhs
+)
 
 -- nvim-tree
 keymap.set("n", "<F5>", ":NvimTreeToggle<CR>")
