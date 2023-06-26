@@ -101,6 +101,15 @@ return require("packer").startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim" },
 	})
 
+	-- Image Viewer
+	--use("nvim-lua/plenary.nvim")
+	use({ "m00qek/baleia.nvim", tag = "v1.3.0" })
+	use({
+		"samodostal/image.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 	-- My plugins here
 	-- use "foo1/bar1.nvim"
 	-- use "foo2/bar2.nvim"

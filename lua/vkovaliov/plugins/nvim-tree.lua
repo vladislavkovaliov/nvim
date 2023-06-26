@@ -13,6 +13,7 @@ nvimtree.setup({
 	},
 
 	renderer = {
+		full_name = true,
 		highlight_git = false,
 		icons = {
 			glyphs = {
