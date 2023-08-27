@@ -39,4 +39,8 @@ nvimtree.setup({
 		},
 		side = "right",
 	},
+
+	filters = {
+		dotfiles = false,
+	},
 })
