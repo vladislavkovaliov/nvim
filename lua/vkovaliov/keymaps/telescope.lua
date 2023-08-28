@@ -27,7 +27,6 @@ telescope = {
 			keymap = "n",
 			command_center = "v",
 		},
-
 		lhs = "<leader>fc",
 		rhs = "<cmd>Telescope grep_string<CR>",
 	},
