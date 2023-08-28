@@ -108,6 +108,8 @@ return require("packer").startup(function(use)
 		branch = "v2", -- optional but strongly recommended
 	})
 
+	use({ "lukas-reineke/indent-blankline.nvim" })
+
 	-- My plugins here
 	-- use "foo1/bar1.nvim"
 	-- use "foo2/bar2.nvim"
