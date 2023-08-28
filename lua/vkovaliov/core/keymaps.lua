@@ -7,6 +7,8 @@ local tabs = require("vkovaliov.keymaps.tabs")
 local telescope = require("vkovaliov.keymaps.telescope")
 local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
 local bufferline = require("vkovaliov.keymaps.bufferline")
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
 
 -- general keymap
 -- keymap.set("i", "jk", "<ESC>")
@@ -68,3 +70,18 @@ keymap.set(
 	bufferline.buffeline_close_tab.lhs,
 	bufferline.buffeline_close_tab.lhs
 )
+
+-- hop
+
+-- keymap.set("", "f", function()
+-- 	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+-- end, { remap = true })
+-- keymap.set("", "F", function()
+-- 	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+-- end, { remap = true })
+-- keymap.set("", "t", function()
+-- 	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+-- end, { remap = true })
+-- keymap.set("", "T", function()
+-- 	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+-- end, { remap = true })

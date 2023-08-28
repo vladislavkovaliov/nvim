@@ -8,7 +8,10 @@ if not actions_setup then
 	return
 end
 
-local command_center = require("command_center")
+local commander = require("commander")
+-- print(commander_setup, commander)
+
+
 local noremap = { noremap = true }
 
 -- importing keymaps preset
@@ -19,26 +22,19 @@ local telescope_keymap = require("vkovaliov.keymaps.telescope")
 local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
 local bufferline = require("vkovaliov.keymaps.bufferline")
 
-command_center.add({
+
+commander.add({
 	{
 		desc = "Open command_center",
-		cmd = "<CMD>Telescope command_center<CR>",
+		cmd = "<CMD>Telescope commander<CR>",
 		keys = {
-			{ "n", "<Leader>fg", noremap },
-			{ "v", "<Leader>fg", noremap },
-
-			-- If ever hesitate when using telescope start with <leader>f,
-			-- also open command center
-			{ "n", "<Leader>f", noremap },
-			{ "v", "<Leader>f", noremap },
+			{ "n", "<Leader>fg" },
 		},
 	},
-}, {
-	mode = command_center.mode.SET,
 })
 
 -- DEFINE gitsigns
-command_center.add({
+commander.add({
 	{
 		desc = gitsigns.preview_hunk.description,
 		cmd = gitsigns.preview_hunk.rhs,
@@ -60,7 +56,7 @@ command_center.add({
 })
 
 -- DEFINE split window
-command_center.add({
+commander.add({
 	{
 		desc = split.verital.description,
 		cmd = split.verital.rhs,
@@ -69,7 +65,7 @@ command_center.add({
 			split.verital.lhs,
 			noremap,
 		},
-		category = "split",
+		cat = "split",
 	},
 	{
 		desc = split.horizont.description,
@@ -79,7 +75,7 @@ command_center.add({
 			split.horizont.lhs,
 			noremap,
 		},
-		category = "split",
+		cat = "split",
 	},
 	{
 		desc = split.equal.description,
@@ -89,7 +85,7 @@ command_center.add({
 			split.equal.lhs,
 			noremap,
 		},
-		category = "split",
+		cat = "split",
 	},
 	{
 		desc = split.close.description,
@@ -99,12 +95,12 @@ command_center.add({
 			split.close.lhs,
 			noremap,
 		},
-		category = "split",
+		cat = "split",
 	},
 })
 
 -- DEFINE telescope keymap
-command_center.add({
+commander.add({
 	{
 		desc = telescope_keymap.find_files.description,
 		cmd = telescope_keymap.find_files.rhs,
@@ -113,7 +109,7 @@ command_center.add({
 			telescope_keymap.find_files.lhs,
 			noremap,
 		},
-		category = "telescope",
+		cat = "telescope",
 	},
 	{
 		desc = telescope_keymap.live_grep.description,
@@ -123,7 +119,7 @@ command_center.add({
 			telescope_keymap.live_grep.lhs,
 			noremap,
 		},
-		category = "telescope",
+		cat = "telescope",
 	},
 	{
 		desc = telescope_keymap.grep_string.description,
@@ -133,7 +129,7 @@ command_center.add({
 			telescope_keymap.grep_string.lhs,
 			noremap,
 		},
-		category = "telescope",
+		cat = "telescope",
 	},
 	{
 		desc = telescope_keymap.buffers.description,
@@ -143,7 +139,7 @@ command_center.add({
 			telescope_keymap.buffers.lhs,
 			noremap,
 		},
-		category = "telescope",
+		cat = "telescope",
 	},
 	{
 		desc = telescope_keymap.help_tags.description,
@@ -153,7 +149,7 @@ command_center.add({
 			telescope_keymap.help_tags.lhs,
 			noremap,
 		},
-		category = "telescope",
+		cat = "telescope",
 	},
 	{
 		desc = telescope_keymap.diagnostics.description,
@@ -163,12 +159,12 @@ command_center.add({
 			telescope_keymap.diagnostics.lhs,
 			noremap,
 		},
-		category = "telescope",
+		cat = "telescope",
 	},
 })
 
 -- DEFINE tabs
-command_center.add({
+commander.add({
 	{
 		desc = tabs.tabnew.description,
 		cmd = tabs.tabnew.rhs,
@@ -208,7 +204,7 @@ command_center.add({
 })
 
 -- DEFINE vim maximizer
-command_center.add({
+commander.add({
 	{
 		desc = vim_maximizer.miximizer_toggle.description,
 		cmd = vim_maximizer.miximizer_toggle.rhs,
@@ -221,7 +217,7 @@ command_center.add({
 })
 
 -- DEFINE bufferline
-command_center.add({
+commander.add({
 	{
 		desc = bufferline.bufferline_next_tab.description,
 		cmd = bufferline.bufferline_next_tab.rhs,
@@ -264,20 +260,31 @@ telescope.setup({
 		},
 	},
 	extensions = {
-		command_center = {
+		commander = commander.setup({
 			components = {
-				command_center.component.DESC,
-				command_center.component.KEYS,
+				"DESC",
+				"KEYS",
+				"CMD",
+				"CAT",
 			},
 			sort_by = {
-				command_center.component.DESC,
-				command_center.component.KEYS,
+				"DESC",
+				"KEYS",
+				"CMD",
+				"CAT",
 			},
-			auto_replace_desc_with_cmd = false,
-		},
+			integration = {
+				telescope = {
+					enable = false,
+				},
+				lazy = {
+					enable = false,
+				},
+			},
+		}),
 	},
 })
 
 -- load telescope extensions
 telescope.load_extension("fzf")
-telescope.load_extension("command_center")
+telescope.load_extension("commander")
