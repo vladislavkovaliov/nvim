@@ -97,10 +97,20 @@ return require("packer").startup(function(use)
 	use("wakatime/vim-wakatime")
 
 	use({
-		"FeiyouG/command_center.nvim",
+		"FeiyouG/commander.nvim",
 		requires = { "nvim-telescope/telescope.nvim" },
 	})
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+
+	-- Plugin for faster navigation in files
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		run = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
 
 	-- My plugins here
 	-- use "foo1/bar1.nvim"
