@@ -3,16 +3,8 @@ if not lspconfig_status then
 	return
 end
 
---
--- adadasdasd
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
-	return
-end
---
-
-local typescript_status, typescript = pcall(require, "typescript")
-if not typescript_status then
 	return
 end
 
@@ -99,4 +91,11 @@ lspconfig["lua_ls"].setup({
 			},
 		},
 	},
+})
+
+-- TypeScript
+lspconfig.tsserver.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 })

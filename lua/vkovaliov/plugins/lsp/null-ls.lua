@@ -10,7 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local function get_ext(name)
-	return vim.fn.executable(name) == 1 and name or nil
+	return vim.fn.executable(name) == 1 and name
 end
 
 -- Check do we have config files in the root of project
@@ -39,7 +39,6 @@ null_ls.setup({
 			command = eslint_executable,
 			rootPatterns = {
 				".eslintrc",
-				"package.json",
 			},
 		}),
 	},

@@ -75,7 +75,6 @@ return require("packer").startup(function(use)
 		branch = "main",
 	})
 
-	use("jose-elias-alvarez/typescript.nvim")
 	use("onsails/lspkind.nvim")
 
 	use("akinsho/flutter-tools.nvim")
