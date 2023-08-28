@@ -21,6 +21,7 @@ local tabs = require("vkovaliov.keymaps.tabs")
 local telescope_keymap = require("vkovaliov.keymaps.telescope")
 local vim_maximizer = require("vkovaliov.keymaps.vim-maximizer")
 local bufferline = require("vkovaliov.keymaps.bufferline")
+local hop = require("hop").setup()
 
 
 commander.add({
